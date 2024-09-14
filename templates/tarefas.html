@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+    <a href="/tarefas/add">+ Adicionar</a>
+    {% set mensagens = get_flashed_messages() %}
+    {% if mensagens %}
+        {% for msg in mensagens %}
+            {{ msg }}
+        {% endfor %}
+    {% endif %}
+    <table>
+        <tr>
+            <th>Descrição</th>
+            <th>Data de Conclusão</th>
+            <th>Prioridade</th>
+            <th>Editar</th>
+            <th>Remover</th>
+        </tr>
+        {% for tarefas in dados %}
+        <tr>
+            <td>{{tarefas.descricao}}</td>
+            <td>{{tarefas.data_conclusao}}</td>
+            <td>{{tarefas.prioridade}}</td>
+            <td><a href="/tarefas/edit/{{tarefas.id_tarefas}}">[E]</a></td>
+            <td><a href="/tarefas/remove/{{tarefas.id_tarefas}}">[X]</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+    {% set mensagens = get_flashed_messages() %}
+    {% if mensagens %}
+        {% for msg in mensagens %}
+            <h1>{{ msg }}</h1> 
+        {% endfor %}
+    {% endif %}
+    <form action="/tarefas/editsave" method="post">
+        <input type="hidden" name="id" value="{{dados.id_tarefas}}">
+
+        <label for="descricao">Descrição:</label>
+        <input type="text" name="descricao" id="descricao" value="{{dados.descricao}}">
+        <label for="data_conclusao">Data de Conclusão:</label>
+        <input type="date" name="data_conclusao" id="data_conclusao" value="{{dados.data_conclusao}}">
+        <label for="prioridade">Prioridade:</label>
+        <input type="text" name="prioridade" id="prioridade" value="{{dados.prioridade}}">
+        <button type="submit">Enviar</button>
+    </form>
+{% endblock %}

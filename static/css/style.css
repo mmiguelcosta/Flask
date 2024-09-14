@@ -1,0 +1,65 @@
+*{
+    border: 0;
+    padding: 0;
+    margin: 0;
+    color: white;
+}
+
+:root {
+    --primary: #3e4452;
+}
+
+nav {
+    background-color: var(--primary);
+    height: 3rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+main {
+    background-color: #535c72;
+    padding-top: 2rem;
+    height: calc(100vh - 5rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+table, tr, td, th {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 1rem;
+}
+
+main a {
+    text-decoration: none;
+    font-weight: 800;
+    font-size: small;
+}
+
+form {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+}
+
+form input {
+    background-color: var(--primary);
+    border: 1px solid black;
+}
+
+form button {
+    border-radius: 5px;
+    margin-top: 1rem;
+    background-color: var(--primary);
+    border: 1px solid black;
+}
+
